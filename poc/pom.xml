@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <groupId>com.sample.camel</groupId>
+  <artifactId>poc</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>poc</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+  	<category>EIP</category>
+    <title>Widget Gadget using Apache Artemis</title>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+        <!-- camel -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>2.24.2</version>
+        </dependency>
+
+        <!-- camel jms -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+            <version>2.24.2</version>
+        </dependency>
+
+        <!-- Artemis client -->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-jms-client</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-client</artifactId>
+			<version>5.9.1</version>
+		</dependency>
+		<!-- Thanks for using https://jar-download.com -->
+        
+        
+        <!-- IBM MQ client -->
+        <!-- https://mvnrepository.com/artifact/com.ibm/com.ibm.mqjms -->
+
+		
+	<!-- https://mvnrepository.com/artifact/com.ibm/com.ibm.mqjms -->
+	<dependency>
+        <groupId>com.ibm.mq</groupId>
+        <artifactId>com.ibm.mq.allclient</artifactId>
+        <version>9.0.4.0</version>
+    </dependency>
+
+
+
+        <!-- logging -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+        
+        <!-- jUnit -->
+        <dependency>
+      		<groupId>junit</groupId>
+      		<artifactId>junit</artifactId>
+      		<version>3.8.1</version>
+      		<scope>test</scope>
+    	</dependency>
+    </dependencies>
+    <!-- <build>
+	<plugins>
+		<plugin>
+			
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>2.4</version>
+			<configuration>
+				<archive>
+					<manifest>
+						<mainClass>com.sample.camel.poc.App</mainClass>
+					</manifest>
+				</archive>
+			</configuration>
+		</plugin>
+	</plugins>
+	</build> -->
+	<build>
+  <plugins>
+    <plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>com.sample.camel.poc.App</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+</project>
