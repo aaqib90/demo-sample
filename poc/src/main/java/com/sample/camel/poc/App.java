@@ -48,7 +48,7 @@ public class App
         // Sets up the Artemis core protocol connection factory
 
     	// without SSL
-        ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://3.134.136.193:61616");
+        ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://172.30.67.42:61616");
 
     	// With SSL
 //    	String BROKER_URL = "ssl://10.0.10.102:61616";
@@ -77,9 +77,9 @@ public class App
     private static JmsComponent createMqConnFactory() throws Exception {
         // Sets up the IBM MQ core protocol connection factory
 
-    	String WMQ_CHANNEL = "CAMMEL.SVRCONN";
-    	String WMQ_HOSTNAME = "10.0.10.160";
-    	int WMQ_PORT = 7657;
+    	String WMQ_CHANNEL = "CAMEL.SVRCONN";
+    	String WMQ_HOSTNAME = "35.184.39.229";
+    	int WMQ_PORT = 7569;
     	String WMQ_QUEUE_MGR = "POCBC";
          
     	MQQueueConnectionFactory mQQueueConnectionFactory = new MQQueueConnectionFactory();
